@@ -1,13 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
+set -e
 
-[-e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.old
-mkdir ~/.zim/
+[ -e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.old$$
+[ -d ~/.zim ]  || mkdir ~/.zim/
 cp `pwd`/zimfw.zsh ~/.zim
-ln -s `pwd`/zshenv ~/.zshenv
-ln -s `pwd`/zshrc ~/.zshrc
-ln -s `pwd`/zlogin ~/.zlogin
-ln -s `pwd`/zimrc ~/.zimrc
+[ -e ~/.zshenv ] || ln -s `pwd`/zshenv ~/.zshenv
+[ -e ~/.zlogin ] || ln -s `pwd`/zlogin ~/.zlogin
+[ -e ~/.zimrc ] || ln -s `pwd`/zimrc ~/.zimrc
 pushd ~
 zsh ~/.zim/zimfw.zsh install
 popd
 
+ln -s `pwd`/zshrc ~/.zshrc
