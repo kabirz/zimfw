@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[-f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
+[-e ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.old
 mkdir ~/.zim/
 cp `pwd`/zimfw.zsh ~/.zim
 ln -s `pwd`/zshenv ~/.zshenv
