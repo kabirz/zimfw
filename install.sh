@@ -1,4 +1,5 @@
 
+[-f ~/.zshrc ] && mv ~/.zshrc ~/.zshrc.bak
 mkdir ~/.zim/
 cp zimfw.sh ~/.zim
 ln -s `pwd`/zshenv ~/.zshenv
