@@ -122,14 +122,3 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
-[ -d ~/.cargo/bin ] && PATH=~/.local/cargo:$PATH
-
-[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
-alias vi=nvim
-alias vim=nvim
-alias ra=ranger
-alias s=neofetch
-export EDITOR=nvim
