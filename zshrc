@@ -120,5 +120,8 @@ bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+# start enable completion
+autoload -U compinit
+compinit
 # }}} End configuration added by Zim install
 
