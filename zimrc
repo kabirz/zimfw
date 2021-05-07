@@ -2,6 +2,9 @@ zmodule environment
 zmodule git
 zmodule input
 zmodule termtitle
+zmodule utility
+zmodule archive
+zmodule fzf
 
 zmodule git-info
 zmodule steeef
