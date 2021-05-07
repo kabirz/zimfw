@@ -12,3 +12,4 @@ zsh ~/.zim/zimfw.zsh install
 popd
 
 ln -s `pwd`/zshrc ~/.zshrc
+dircolors -p >~/.dir_colors
