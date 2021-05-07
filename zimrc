@@ -15,4 +15,6 @@ zmodule completion
 zmodule zsh-users/zsh-autosuggestions
 zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
+zmodule hcgraf/zsh-sudo -n sudo
+zmodule Tarrasch/zsh-command-not-found -n command-not-found
 zmodule kabirz/zsh-config
