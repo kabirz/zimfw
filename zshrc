@@ -128,5 +128,6 @@ if [ "$(command -v starship)" ]; then
 else
   echo 'Please Install starship'
 fi
+source $(dirname $(readlink -f ${(%):-%N}))/my.zsh
 # }}} End configuration added by Zim install
 
