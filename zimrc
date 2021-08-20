@@ -7,7 +7,7 @@ zmodule archive
 zmodule fzf
 
 zmodule git-info
-zmodule steeef
+#zmodule steeef # replace with starship
 #zmodule eriner
 
 zmodule zsh-users/zsh-completions
