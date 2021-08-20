@@ -1,9 +1,14 @@
-#add_newline = false             # Don't print a new line at the start of the prompt
+add_newline = false             # Don't print a new line at the start of the prompt
 
 # Replace the "❯" symbol in the prompt with "⟶"
 [character]                     # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green) "
+success_symbol = "[❯](bold green) "
 error_symbol = "[✗](bold red) "
+
+[custom.tztime]
+command = 'date +"%m-%d %T"'
+when = "true"
+format = '[🕙 $symbol($output)](bold purple) '
 
 [directory]                     # The name of the module we are configuring is "directory"
 truncation_length = -1
@@ -39,13 +44,6 @@ style = "bold dimmed green"
 
 [package]                       # The name of the module we are configuring is "package"
 disabled = true                 # Disable the package module, hiding it from the prompt completely
-
-[time]                          # The name of the module we are configuring is "time"
-disabled = true
-format = '🕙[\[ $time \]]($style) '
-time_format = "%T"
-#utc_time_offset = "-5"
-#time_range = "10:00:00-14:00:00"
 
 [username]                      # The name of the module we are configuring is "username"
 style_user = "bold dimmed blue"
