@@ -121,13 +121,6 @@ bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 # start enable completion
-autoload -U compinit
-compinit
-if [ "$(command -v starship)" ]; then
-  eval "$(starship init zsh)"
-else
-  echo 'Please Install starship'
-fi
 source $(dirname $(readlink -f ${(%):-%N}))/my.zsh
 # }}} End configuration added by Zim install
 

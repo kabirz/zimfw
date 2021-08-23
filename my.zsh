@@ -74,6 +74,11 @@ fi
 if (( ${+commands[bat]} )); then
     alias cat='bat -pp --theme Dracula'
 fi
+if (( ${+commands[starship]} )); then
+  eval "$(starship init zsh)"
+else
+    source $(dirname ${(%):-%N})/steeef.zsh-theme
+fi
 
 # for fzf
 [[ -e /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
@@ -81,11 +86,20 @@ fi
 [[ -e /usr/share/doc/fzf/examples/completion.zsh ]] && source /usr/share/doc/fzf/examples/completion.zsh
 [[ -e /usr/share/doc/fzf/examples/key-bindings.zsh ]] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 
-export EDITOR=nvim
+if (( ${+commands[nvim]} )); then
+    export EDITOR=nvim
+elif (( ${+commands[vim]} )); then
+    export EDITOR=vim
+else
+    export EDITOR=vi
+fi
 
 #mirros for rust
 export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
+
+autoload -U compinit
+compinit
 # proxy for golang
 # export GOPROXY=https://mirrors.aliyun.com/goproxy
 # replace by command: go env -w GOPROXY=https://goproxy.cn
