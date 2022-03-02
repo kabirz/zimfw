@@ -97,6 +97,8 @@ fi
 #mirros for rust
 export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
+# enable true color
+export COLORTERM=truecolor
 
 autoload -U compinit
 compinit
