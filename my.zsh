@@ -50,10 +50,6 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
-alias ra=ranger
-alias s=neofetch
-alias lg=lazygit
-
 [ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
 [ -d ~/.cargo/bin ] && PATH=~/.cargo/bin:$PATH
 
@@ -77,6 +73,20 @@ else
     source $(dirname ${(%):-%N})/steeef.zsh-theme
 fi
 
+if (( ${+commands[joshuto]} )); then
+    alias ra=joshuto
+elif (( ${+commands[ranger]} )); then
+    alias ra=ranger
+fi
+
+if (( ${+commands[neofetch]} )); then
+    alias s=neofetch
+fi
+
+if (( ${+commands[lazygit]} )); then
+    alias lg=lazygit
+fi
+
 # for fzf
 [[ -e /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
 [[ -e /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
@@ -84,8 +94,11 @@ fi
 [[ -e /usr/share/doc/fzf/examples/key-bindings.zsh ]] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 if (( ${+commands[nvim]} )); then
+    alias vi=nvim
+    alias vim=nvim
     export EDITOR=nvim
 elif (( ${+commands[vim]} )); then
+    alias vi=vim
     export EDITOR=vim
 else
     export EDITOR=vi
