@@ -72,6 +72,9 @@ if (( ${+commands[starship]} )); then
 else
     source $(dirname ${(%):-%N})/steeef.zsh-theme
 fi
+if (( ${+commands[zoxide]} )); then
+  eval "$(zoxide init zsh)"
+fi
 
 if (( ${+commands[joshuto]} )); then
     alias ra=joshuto
@@ -109,6 +112,7 @@ export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
 # enable true color
 export COLORTERM=truecolor
+export TERM=screen-256color
 
 autoload -U compinit
 compinit
