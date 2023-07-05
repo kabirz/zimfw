@@ -7,7 +7,6 @@ cp `pwd`/zimfw.zsh ~/.zim
 [ -e ~/.zshenv ] || ln -s `pwd`/zshenv ~/.zshenv
 [ -e ~/.zlogin ] || ln -s `pwd`/zlogin ~/.zlogin
 [ -e ~/.zimrc ] || ln -s `pwd`/zimrc ~/.zimrc
-[ -e ~/.config/starship.toml ] || ln -s `pwd`/starship.toml ~/.config/starship.toml
 pushd ~
 zsh ~/.zim/zimfw.zsh install
 popd
