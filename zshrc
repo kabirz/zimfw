@@ -23,7 +23,6 @@ bindkey -e
 
 # Prompt for spelling correction of commands.
 #setopt CORRECT
-setopt clobber
 
 # Customize spelling correction prompt.
 #SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
@@ -124,4 +123,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 # start enable completion
 source $(dirname $(readlink -f ${(%):-%N}))/my.zsh
 # }}} End configuration added by Zim install
+# local config
+[ ! -e ~/.myrc ] || source ~/.myrc
 

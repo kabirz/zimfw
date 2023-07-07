@@ -50,8 +50,8 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
-[ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
 [ -d ~/.cargo/bin ] && PATH=~/.cargo/bin:$PATH
+[ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
 
 if (( ${+commands[exa]} )); then
     unalias -m 'll'
@@ -116,6 +116,7 @@ export TERM=screen-256color
 
 autoload -U compinit
 compinit
+setopt clobber
 # proxy for golang
 # export GOPROXY=https://mirrors.aliyun.com/goproxy
 # replace by command: go env -w GOPROXY=https://goproxy.cn
