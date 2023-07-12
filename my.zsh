@@ -52,6 +52,7 @@ alias tkss='tmux kill-session -t'
 
 [ -d ~/.cargo/bin ] && PATH=~/.cargo/bin:$PATH
 [ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
+[ -d ~/.local/share/bob/nvim-bin/ ] && PATH=~/.local/share/bob/nvim-bin:$PATH
 
 if (( ${+commands[exa]} )); then
     unalias -m 'll'
