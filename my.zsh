@@ -49,6 +49,13 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
+function ipa() {
+    host $HOST | awk '{print $NF}'
+}
+
+function ipas() {
+    ip addr show | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+}
 
 [ -d ~/.cargo/bin ] && PATH=~/.cargo/bin:$PATH
 [ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
@@ -75,6 +82,10 @@ else
 fi
 if (( ${+commands[zoxide]} )); then
   eval "$(zoxide init zsh)"
+fi
+
+if (( ${+commands[gitui]} )); then
+    alias g=gitui
 fi
 
 if (( ${+commands[joshuto]} )); then
