@@ -57,7 +57,6 @@ function ipas() {
     ip addr show | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
 }
 
-[ -d ~/.cargo/bin ] && PATH=~/.cargo/bin:$PATH
 [ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
 [ -d ~/.local/share/bob/nvim-bin/ ] && PATH=~/.local/share/bob/nvim-bin:$PATH
 
@@ -120,8 +119,8 @@ else
 fi
 
 #mirros for rust
-export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER=http://rsproxy.cn
+export RUSTUP_UPDATE_ROOT=http://rsporxy.cn/rustup
 # enable true color
 export COLORTERM=truecolor
 export TERM=screen-256color
