@@ -50,11 +50,20 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 function ipa() {
-    host $HOST | awk '{print $NF}'
+    if [[ "$(uname)" == "Darwin" ]]; then
+        ifconfig | grep inet -w | grep -v 127.0.0.1 | awk '{print $2}'
+    elif [[ "$(uname)" == "Linux" ]]; then
+        host $HOST | awk '{print $NF}'
+    fi
+
 }
 
 function ipas() {
-    ip addr show | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+    if [[ "$(uname)" == "Darwin" ]]; then
+        ifconfig | grep inet -w | awk '{print $2}'
+    elif [[ "$(uname)" == "Linux" ]]; then
+        ip addr show | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+    fi
 }
 
 [ -d ~/.local/bin ] && PATH=~/.local/bin:$PATH
