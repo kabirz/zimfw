@@ -125,6 +125,8 @@ else
     export EDITOR=vi
 fi
 
+[ ! -e ~/.dotfiles/zshrc ] || source ~/.dotfiles/zshrc
+
 #mirros for rust
 export RUSTUP_DIST_SERVER=http://rsproxy.cn
 export RUSTUP_UPDATE_ROOT=http://rsporxy.cn/rustup
