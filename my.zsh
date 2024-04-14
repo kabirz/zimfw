@@ -109,10 +109,9 @@ if (( ${+commands[lazygit]} )); then
 fi
 
 # for fzf
-[[ -e /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
-[[ -e /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
-[[ -e /usr/share/doc/fzf/examples/completion.zsh ]] && source /usr/share/doc/fzf/examples/completion.zsh
-[[ -e /usr/share/doc/fzf/examples/key-bindings.zsh ]] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+if (( ${+commands[fzf]} )); then
+    eval "$(fzf --zsh)"
+fi
 
 if (( ${+commands[nvim]} )); then
     alias vi=nvim
