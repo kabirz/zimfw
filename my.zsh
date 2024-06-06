@@ -96,6 +96,7 @@ fi
 
 if (( ${+commands[joshuto]} )); then
     alias ra=joshuto
+    alias jo=joshuto
 elif (( ${+commands[ranger]} )); then
     alias ra=ranger
 fi
