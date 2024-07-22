@@ -67,14 +67,14 @@ function ipas() {
 }
 
 
-if (( ${+commands[exa]} )); then
+if (( ${+commands[eza]} )); then
     unalias -m 'll'
     unalias -m 'l'
     unalias -m 'ls'
-    alias ls='exa --color auto --icons -s type'
-    alias ll='exa -l --color always --icons -s type'
-		alias l='exa -lFh'
-    alias la='exa -laFh'
+    alias ls='eza --color auto --icons -s type'
+    alias ll='eza -l --color always --icons -s type'
+		alias l='eza -lFh'
+    alias la='eza -laFh'
 else
     alias la='ls -lAFh'
 fi
