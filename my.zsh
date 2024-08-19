@@ -134,8 +134,6 @@ export RUSTUP_UPDATE_ROOT=http://rsporxy.cn/rustup
 export COLORTERM=truecolor
 export TERM=screen-256color
 
-autoload -U compinit
-compinit
 setopt clobber
 # proxy for golang
 # export GOPROXY=https://mirrors.aliyun.com/goproxy

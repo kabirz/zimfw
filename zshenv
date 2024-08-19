@@ -6,6 +6,8 @@
 # Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 # }}} End configuration added by Zim install
+skip_global_compinit=1
+
 if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env";
 elif [ -d "$HOME/.cargo/bin" ]; then
