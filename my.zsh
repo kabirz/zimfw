@@ -72,12 +72,11 @@ if (( ${+commands[eza]} )); then
     unalias -m 'l'
     unalias -m 'ls'
     alias ls='eza --color auto --icons -s type'
-    alias ll='eza -l --color always --icons -s type'
-		alias l='eza -lFh'
-    alias la='eza -laFh'
-else
-    alias la='ls -lAFh'
 fi
+alias ll='ls -l'
+alias l='ll -h'
+alias la='l -a'
+
 if (( ${+commands[bat]} )); then
     alias cat='bat -pp --theme Dracula'
 fi
