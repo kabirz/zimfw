@@ -66,6 +66,22 @@ function ipas() {
     fi
 }
 
+function openproxy() {
+    export http_proxy="http://127.0.0.1:10887"
+    export https_proxy="http://127.0.0.1:10887"
+    export HTTP_PROXY="http://127.0.0.1:10887"
+    export HTTPS_PROXY="http://127.0.0.1:10887"
+    echo "already open proxy with 127.0.0.1:10887"
+}
+
+function closeproxy() {
+    unset http_proxy
+    unset https_proxy
+    unset HTTP_PROXY
+    unset HTTPS_PROXY
+
+    echo "already close proxy"
+}
 
 if (( ${+commands[eza]} )); then
     unalias -m 'll'
