@@ -143,8 +143,9 @@ fi
 [ ! -e ~/.dotfiles/zshrc ] || source ~/.dotfiles/zshrc
 
 #mirros for rust
-export RUSTUP_DIST_SERVER=http://rsproxy.cn
-export RUSTUP_UPDATE_ROOT=http://rsporxy.cn/rustup
+export RUSTUP_DIST_SERVER=https://rsproxy.cn
+export RUSTUP_UPDATE_ROOT=https://rsporxy.cn/rustup
+# curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh
 # enable true color
 export COLORTERM=truecolor
 export TERM=screen-256color
